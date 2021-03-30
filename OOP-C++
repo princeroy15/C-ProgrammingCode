@@ -1,0 +1,64 @@
+#include<iostream>
+
+using namespace std;
+
+class mmdu{
+private:
+    string Position;
+    int Age;
+    int ID;
+protected:
+    string Name;
+public:
+    mmdu(string name,string position, int age,int id){
+        Name=name;
+        Position=position;
+        Age= age;
+        ID=id;
+    }
+    void getInfo(){
+        cout<<"Name -"<<Name<<endl;
+        cout<<"Current Position -"<<Position<<endl;
+        cout<<"Age -"<<Age<<endl;
+        cout<<"Id -"<<ID<<endl;
+    }
+    virtual void Introduce(){
+        cout<<Name<<" is good men"<<endl;
+    }
+};
+
+class Student: public mmdu{
+public:
+    string Programining_language;
+    Student(string name,string position, int age,int id,string programing_language):mmdu(name,position,age,id){
+        Programining_language = programing_language;
+    }
+    void Introduce(){
+        cout<<Name<<" work in "<<Programining_language<<endl;
+    }
+};
+
+class Teacher: public mmdu{
+public:
+    string Subject;
+    Teacher(string name,string position, int age,int id,string subject):mmdu(name,position,age,id){
+        Subject = subject;
+    }
+    void Introduce(){
+        cout<<Name<<" is a teacher of "<<Subject<<endl;
+    }
+};
+
+
+int main()
+    {
+        Student staf1("Prince Roy","Student",22,11182591,"C++");
+        staf1.getInfo();
+        staf1.Introduce();
+        cout<<endl;
+        Teacher staf2("JackSon","Teacher",45,11106,"BigData");
+        staf2.getInfo();
+        staf2.Introduce();
+
+        system("pause>0");
+    }
