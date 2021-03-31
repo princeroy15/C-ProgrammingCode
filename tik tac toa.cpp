@@ -104,4 +104,5 @@ int main()
     {
         tiktactoa user("Prince","Nion");
         user.game();
+        system("pause>0");
     }
